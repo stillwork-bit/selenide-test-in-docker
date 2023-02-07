@@ -1,0 +1,13 @@
+{
+  "chrome": {
+    "default": "96",
+    "versions": {
+      "96": {
+        "image": [
+          "\\app\\jar\\selenoid\\chromedriver",
+          "--log-level=DEBUG"
+        ]
+      }
+    }
+  }
+}

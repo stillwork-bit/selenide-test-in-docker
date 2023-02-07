@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.example</groupId>
+  <artifactId>ui-test</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0</version>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
+    <java.version>11</java.version>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <junit.platform.version>1.7.0</junit.platform.version>
+    <junit.jupiter.version>5.5.2</junit.jupiter.version>
+    <selenide.version>6.1.1</selenide.version>
+    <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>${junit.jupiter.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.codeborne</groupId>
+      <artifactId>selenide</artifactId>
+      <version>${selenide.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <defaultGoal>test</defaultGoal>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven.compiler.plugin.version}</version>
+        <configuration>
+          <encoding>UTF-8</encoding>
+          <source>11</source>
+          <target>11</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <parallel>methods</parallel>
+          <testFailureIgnore>true</testFailureIgnore>
+          <threadCount>5</threadCount>
+        </configuration>
+        <groupId>org.apache.maven.plugins</groupId>
+        <version>${maven-surefire-plugin.version}</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>
