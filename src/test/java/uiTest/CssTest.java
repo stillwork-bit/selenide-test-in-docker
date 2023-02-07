@@ -1,14 +1,18 @@
 package uiTest;
 
 import static com.codeborne.selenide.Condition.ownText;
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.open;
 
+import com.codeborne.selenide.Condition;
 import java.time.Duration;
 import model.CssLocators;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 
 public class CssTest extends BaseTest {
     private CssLocators cssLocators = new CssLocators();
@@ -32,7 +36,7 @@ public class CssTest extends BaseTest {
     @Order(2)
     @DisplayName("Поиск по абсолютному совпадению заголовка 'Naughty or Nice List' кнопки Naughty or Nice List")
     public void fullHeaderButton() {
-        cssLocators.fullHeaderButton.shouldBe(visible, Duration.ofSeconds(10))
+        cssLocators.fullHeaderButton.shouldBe(Condition.visible, Duration.ofSeconds(10))
                                     .shouldHave(ownText(fullHeaderButton));
     }
 
